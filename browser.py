@@ -7,15 +7,15 @@ class MyApp(wx.App):
         self.InitBrowser()
 
     def InitBrowser(self):
-        pass
+        webbrowser = WebFrame(None, "WxBrowser", pos=(100, 100))
+        webbrowser.Show()
 
 class WebFrame(wx.Frame):
     def __init__(self, title, parent, pos):
         super().__init__(parent, title=title, pos=pos)
 
         # Create Variables
-
-        #Browser
+        # Browser
         self._browser = html2.WebView.New(self)
         self._browser.LoadURL("https://kabiirk.github.io/")
 
@@ -30,7 +30,7 @@ class WebFrame(wx.Frame):
         # The Above lines define layout as
         #  _________________________________________
         # | (<-) (->) | https://kabiirk.github.io   |
-        # |_________________________________________|
+        # |___________|_____________________________|
         # |              THE WEBPAGE                |
         # |                                         |
         # |                                         |
